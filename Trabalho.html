@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>  <!--tag para montar o cabeçalho do codigo para a web ,parte não mostrada na pagina do navegador.-->  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melhorando o Sistema Público de Saúde</title>  <!--tag para dicionar o titulo da página.-->
+
+    <script>
+        function calcularIMC()  // A tag function é usado para incluir ou referenciar um script executável. Conteúdo de metadados, Fluxo de conteúdo, Conteúdo fraseado.
+        { 
+          const peso = parseFloat(document.getElementById("peso").value);   // A tag const cria uma variável cujo o valor é fixo, ou seja, uma constante somente leitura. (variável constante não pode ser alterada ou retribuída)
+          const altura = parseFloat(document.getElementById("altura").value);  // A função parseFloat analisa um argumento de string e retorna um número de ponto flutuante.
+
+          const imc = (peso / (altura * altura)).toFixed(1);  // O método toFixed  retorna uma representação de string de um número sem usar notação exponencial e com dígitos exatos digitados após o ponto decimal.
+
+          document.getElementById("resultado").innerHTML = imc + ' ' + classificacao(imc);  // O método conhecido como DOM.(Representa uma página de forma que os programas podem alterar a estrutura do documento, alterar o estilo e o conteúdo.
+        }
+
+        function classificacao(imc) 
+        { 
+          if (imc < 18.5)  // A condicional if executa a afirmação dentro do bloco se a condição for verdadeira. 
+            return "Abaixo do peso";  // A instrução return envia de volta um valor específico quando a função é chamada
+
+          if (imc >= 18.5 && imc <= 24.9)
+            return "Normal";
+
+          if (imc >= 25 && imc <= 29.9)
+            return "Sobrepeso I";
+
+          if (imc >= 30 && imc <= 39.9)
+            return "Obessidade II";
+
+          if (imc >= 40)
+            return "Obessidade III";
+        }
+    </script>
+
+    <style> 
+      body {                           
+        font-family: Arial, sans-serif;  /* tags utilizadas para a mudança no corpo da página web,neste caso a mudança da fonte e da cor do fundo */
+        background-color: #f3f3f3;
+      }
+
+      h1#titulo {  /* utiliza o id que foi colocado em um dos h1 e modifica apenas ele */
+        text-align: center;
+        max-width: 100%;
+        font-size: 1.6em;
+      }
+      
+      h1 {
+        color: red;  /* tag utilizada para a mudança da cor de todas as tags h1 */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        max-width: 400px;
+        font-size: 1.5em;
+      }
+
+      h2 {
+        color: blue;  /* tag utilizada para a mudança da cor de todas as tags h2 */
+      }
+
+      a {
+        color: darkblue;  /* tag utilizada para a mudança da cor dos links de fácil acesso no começo da página e do email no final da pagina */
+      }
+    </style>  
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>  <!-- tag de abertura do corpo da web,onde se monta tudo que será exibido na tela do navegador. -->
+    <h1 id="titulo">Melhorando o Sistema Público de Saúde</h1>  <!-- tag utilizada para destacar títulos de uma página junto com a tag id para diferenciar a tag dos outros. -->
+      <li><a href="#quem-somos">Quem Somos</a></li>  <!--tag usada para definir um item de um lista.-->
+      <li><a href="#objetivos">Objetivos</a></li>
+      <li><a href="#solucoes">Soluções</a></li>
+      <li><a href="#prevencao">Prevenção</a></li>
+      <li><a href="#contato">Contato</a></li>
+      <li><a href="#calcule-seu-imc">Calcule seu imc</a></li>
+    <section id="quem-somos">  <!-- tag responsavel por organizar as seções de um documento ou titulos dentro do codigo do site.-->
+
+      <h1>Quem Somos</h1>
+      <p>Somos um grupo de cidadãos preocupados com a saúde pública,acompanhe até o final da pagina para melhor entendimento<br> do que estamos propondo,iremos mostrar alguns fatores/investimentos indispensáveis para a melhoria.</p>
+      <img src="https://img.freepik.com/vetores-premium/grupo-de-estudantes-estudando-juntos-em-uma-biblioteca-moderna_997502-776.jpg" alt="Equipe de estudante" width="300px">
+      </section>
+
+    <section id="objetivos">
+      <h1>Objetivos</h1>
+     <p> Temos como objetivo principal melhorar a qualidade de vida da população, especialmente em comunidades vulneráveis,<br> por meio da implementação de melhorias na saúde pública.</p>  <!--tag usada para definir um parágrafo -->
+      <h2>Missão:</h2>  <!--tag utilizada para destacar subtítulos de uma página.-->
+       <p class="especial">"Promover a saúde e o bem-estar da população, reduzindo desigualdades e melhorando o acesso a serviços de saúde de qualidade."</p>
+      <h2>Metas:</h2>
+      <h3>  <!--tag utilizada para destacar subtítulos de uma página.-->
+        <li>Melhorar o acesso a serviços de saúde básicos, como vacinação, atendimento médico e tratamento de doenças crônicas.</li>
+        <li>Fortalecer a infraestrutura de saúde pública, incluindo reformas e equipamentos para hospitais e unidades de saúde.</li>
+        <li>Capacitar profissionais de saúde por meio de treinamentos e educação continuada.</li>
+        <li>Promover hábitos saudáveis e prevenção de doenças através de educação em saúde e campanhas de conscientização.</li>
+        <li>Reduzir a mortalidade infantil e materna em comunidades vulneráveis.</li>
+        <li>Implementar tecnologias inovadoras para melhorar a eficiência e eficácia dos serviços de saúde.</li>
+        <li>Estabelecer parcerias com governos, instituições e comunidades para ampliar o impacto das ações.</li>
+      </h3>
+      <h2>Áreas de atuação:</h3>
+      <h3>
+        <li>Saúde infantil e materna</li>
+        <li>Doenças crônicas e prevençãoSaúde mental</li>
+        <li>Emergências e desastres</li>
+        <li>Tecnologia em saúde</li>
+      </h3>
+      <h2>Metodologia:</h2>
+      <h3>
+        <li>Análise de necessidades e diagnóstico da situação de saúde</li>
+        <li>Desenvolvimento de projetos e programas</li>
+        <li>Implementação e monitoramento</li>
+        <li>Avaliação e ajustes</li>
+      </h3>
+      <img src="https://i0.wp.com/saudedebate.com.br/wp-content/uploads/2024/02/composicao-motivacional-para-realizacao-de-metas.jpg?resize=1000%2C667&ssl=1" alt="Objetivos" width="200px" height="170px">  <!-- tag utilizada para inserir imagens em uma página web-->
+      <img src="https://blog.fantasticbrindes.com.br/wp-content/uploads/2022/01/objetivo-para-mensurar-as-acoes-de-marketing-promocional-600x600.jpg" alt="Objetivos" width="200px" height="170px">
+      <img src="https://media.licdn.com/dms/image/v2/C4E12AQG2McmD_gOa2g/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1635433703892?e=2147483647&v=beta&t=PLXDBFGa7wYNxhKM86rSwIt1mStgI9n3vkEt5CkAQdM" alt="Objetivos" width="200px" height="170px">
+    </section>
+
+    <section id="solucoes">
+      <h1>Soluções</h1> 
+      <article>  <!-- tag usada para se necessário distribuir separadamente o conteúdo de um elemento.-->
+      <h2>Tecnologia</h2>
+      <p> A implementação de novas tecnologias é fundamental para melhorar a eficiência, qualidade e acessibilidade dos serviços de saúde.</p>
+
+      <h2>Algumas das principais tecnologias que podem ser implementadas incluem:</h2>
+      <h3>
+        <li>Prontuário eletrônico e registros de saúde digitalizados</li>
+        <li>Telemedicina e consultas online</li>
+        <li>Inteligência artificial e análise de dados para diagnóstico e tratamento</li>
+        <li>Realidade aumentada e virtual para treinamento e educação</li>
+        <li>Internet das coisas (IoT) para monitoramento remoto</li>
+      </h3>
+      <h2>Essas tecnologias oferecem benefícios como:<h2>
+      <h3>
+        <li>Melhoria da precisão e eficiência diagnóstica</li>
+        <li>Aumento da acessibilidade e conveniência para pacientes</li>
+        <li>Redução de custos e otimização de recursos</li>
+        <li>Melhoria da experiência do paciente</li>
+        <li>Aumento da capacidade de pesquisa e inovação</li>
+      </h3>
+
+      <h2>Além disso, a implementação de novas tecnologias também pode:<h2>
+      <h3>
+        <li>Promover a integração e compartilhamento de informações</li>
+        <li>Melhorar a segurança e privacidade dos dados</li>
+        <li>Aumentar a transparência e responsabilidade</li>
+      </h3>
+
+      <p>Investir em tecnologia é investir no futuro da saúde.</p>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQC-b5lxfYJqYJFighpMBeJNM4037Go243Jg&s" alt="Tecnologia" width="200px" height="170px">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOhT8UebNRLSsydKWx_t7xZsW893tulKEC-w&s" alt="Tecnologia" width="200px" height="170px">
+      <img src="https://star.med.br/wp-content/uploads/2022/06/cientista-utilizando-tecnologia-na-saude-para-criar-vacina.webp" alt="Tecnologia" width="200px" height="170px">
+    </article>
+
+    <article>
+      <h2>Formação</h2>
+      <p>A capacitação dos profissionais de saúde é fundamental para garantir a qualidade e eficácia dos serviços de saúde. A melhor capacitação<br> desses profissionais tem um impacto direto na melhoria dos resultados de saúde dos pacientes e na satisfação dos mesmos.</p>
+
+      <h2>Importância da capacitação:</h2>
+      <h3>
+        <li>Melhoria da qualidade do atendimento</li>
+        <li>Aumento da segurança do paciente Redução de erros médicos</li>
+        <li>Melhoria da comunicação entre equipe médica e pacientes</li>
+        <li>Aumento da eficiência e produtividade</li>
+        <li>Melhoria da gestão de recursos</li>
+      </h3>
+
+      <h2>Benefícios da capacitação:</h2>
+      <h3>
+        <li>Desenvolvimento de habilidades e competências</li>
+        <li>Atualização de conhecimentos e práticas</li>
+        <li>Aumento da confiança e autonomia</li>
+        <li>Melhoria da satisfação no trabalho</li>
+        <li>Redução do estresse e burnout</li>
+      </h3>
+
+      <h2>Tipos de capacitação:</h2> 
+      <h3>
+        <li>Treinamento em serviço</li>
+        <li>Cursos de especialização</li>
+        <li>Workshops e seminários</li>
+        <li>Simulações e treinamento prático</li>
+        <li>Mentorias e coaching</li>
+      </h3>
+
+      <h3>Investir na capacitação dos profissionais de saúde é investir na saúde e bem-estar da população. É essencial para<br> qualquer instituição de saúde priorizar a educação continuada e o desenvolvimento profissional de seus colaboradores.</h3>
+
+      <img src="https://str1.lnmimg.com/img/2024/02/05/a28a7f416dc4243bd1c18784ef9a073c.jpeg" alt="Formação" width="200px" height="170px">
+      <img src="https://media.licdn.com/dms/image/v2/D5612AQGhF34T595X-w/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1721184526730?e=2147483647&v=beta&t=PaaJZVRN057_K0iALvV2-I57KYfNXkzxYYX03Lhyves" alt="Formação" width="200px"height="170px">
+      <img src="https://www.gov.br/defesa/pt-br/centrais-de-conteudo/noticias/profissionais-de-saude-recebem-treinamento-em-unidades-hospitalares-das-forcas-armadas/23062020_coviddestaque.jpeg" alt="Formação" width="200px"height="170px">
+      </article>
+
+      <article id="prevencao">
+        <h1>Prevenção</h1>
+        <p>A saúde preventiva é fundamental para a manutenção da qualidade de vida e bem-estar da população.<br> Ela envolve medidas que visam prevenir doenças e promover hábitos saudáveis, evitando assim o desenvolvimento<br> de condições crônicas e graves.</p>
+
+        <h2>A saúde preventiva oferece inúmeros benefícios, incluindo:</h2>
+
+        <h3>
+           <li> Redução de custos com tratamentos médicos</li>
+           <li> Diminuição da incidência de doenças crônicas</li>
+           <li> Melhoria da qualidade de vida</li>
+           <li> Aumento da produtividade e eficiência</li>
+           <li> Redução da mortalidade prematura</li>
+        </h3>
+
+        <h3>Além disso, a saúde preventiva também contribui para:</h3>
+
+        <h3>
+          <li>Promover hábitos saudáveis, como alimentação equilibrada e exercícios físicos regulares</li>
+          <li>Realizar exames preventivos e diagnósticos precoces</li>
+          <li>Vacinação e imunização contra doenças infectocontagiosas</li>
+          <li>Educação em saúde e conscientização sobre riscos e prevenção</li>
+        </h3>
+
+        <h2>Investir em saúde preventiva é investir na vida e no futuro.</h2>
+
+        <img src="https://media.unimedcampinas.com.br/da070bce-44b8-4a01-a3ba-62c379ecf58e" alt="prevencao" width="200px" height="170px">
+        <img src="https://cdn.prod.website-files.com/5f7c5ad0f02de81be2e6417c/6499a8fd379e15da62cda5a7_niveis-de-prevencao-em-saude.jpg" alt="prevencao" width="200px" height="170px">
+        <img src="https://www.saudevitalidade.com/wp-content/uploads/2021/10/a4442c1c-6ae6-49f0-8379-0d2fb4b57a35.png" alt="prevencao" width="200px" height="170px">
+      </article>
+    </section>
+
+    <section id="calcule-seu-imc">
+     <br><h1>Calcule seu IMC</h1></br>
+      <h3>O Índice de Massa Corporal (IMC) é um cálculo que serve para avaliar se o peso de uma pessoa está adequado para a sua altura.</h3>
+
+      Peso: <br>
+      <input id="peso" placeholder="Digite o seu peso" type="number" step="0.01"> <br> <br>
+      Altura: <br>
+      <input id="altura" placeholder="Digite a sua altura" type="number" step="0.01"> <br> <br>
+      <button onclick="calcularIMC()">Calcular IMC</button>  <!--Tag utilizada para inserir interatividade em uma página ou formulário.Com uma função para ativação ao clique do usuario-->
+
+      <p id="resultado"></p>
+
+    </section>
+
+    <section id="contato">
+      <h1>Contato</h1>
+      <p>Entre em contato conosco:</p>
+        <li>Telefone: (21) 4004-8888</li>
+        <li>Email: <a href="mailto:melhorsaudepublica@gmail.com.br">melhorsaudepublica@gmail.com.br</a></li>
+    </section>
+    <footer>  <!--tag usada para delimitar o conteúdo de um rodapé-->
+        <p>&copy; 2025 Saúde Pública</p>  <!--(&copy ,tag utilizada para adicionar o símbolo de direitos autorais)-->
+    </footer>
+  </body>
+</html>
